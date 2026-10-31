@@ -136,7 +136,7 @@ obs <- count_data
 
 ## e) Create a dataframe including kid, obs and lib. Assign this to 'stories'. 
 stories <- data.frame(kid, obs, lib)
-
+stories
 ## f) Take a look at the summary of your dataframe, and at the classes of your 
 ##    columns. What class are the variable 'kid' and 'lib'?
 class(kid)
@@ -147,7 +147,7 @@ class(lib)
 ##     class for these variables? (answer for both separately)
 ?factor
 as.factor(kid)
-as.factor(lib)
+as.factor(lib, labels= )
 kid
 lib
 ## kid is discrete observation IDs. R performs mathematical calculations like mean(kid) or sum(kid), which are statistically meaningless for unique identifiers.
@@ -161,13 +161,13 @@ boxplot(obs ~ lib,
        main = "Boxplot of obs by lib Group",
        col = c("red", "green"))
 ## i) Are there outliers in one of the lib groups?
-## Yes there are outliers in both the lib groups which are shown by dots in the plot.
+## Yes there are outliers in both the lib groups which are shown by circles in the plot.
 
 ## j) Which group shows the larger interquartile range? 
 ## Group N shows the largest interquartile range shown by the width of the box
 
 ## k) Which one has the  greater overall range?
-## Group N has the greater overall range given by: Range = Maximum - Minimum which is 10
+## Both Group Y and N has equal overall range given by: Range = Maximum - Minimum which is 10 in both case
 
 ## l) What is a whisker? Why is the upper whisker of group "Y" so short?
 ## A whisker is a line extending from the top or bottom of the central box to to the length of 1.5 * Inter_Quartile_Range which indicate the variability outside the upper and lower quartiles.
