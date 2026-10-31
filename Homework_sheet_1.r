@@ -112,7 +112,7 @@ count_data <- c(18, 15,	18,	19,	23,	17,	18,	24,	17,	14,	16,	16,	17,	21,	22,	18,	
 
 ## a) What measurement scale is this data? Is it discrete or continuous? Explain
 ##    in one sentence why.
-##    This is discrete data as the count takes specific, separate, and countable values
+##    This uses a ratio scale because true zero exists and children can create stories without usung and then. This is discrete data as the count takes specific, separate, and countable values
 
 ## b) The researcher is also interested in whether story telling is related to 
 ##    their reading habits. As a proxy, she asked the children, whether they have 
