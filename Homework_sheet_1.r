@@ -53,7 +53,8 @@ library(languageR)
 ##    This dataset should be available to you once you've loaded languageR.
 ##    Find out what experiment the data comes from
 languageR::lexdec
-## TODO: FIndout
+?lexdec
+## Lexical decision latencies elicited from 21 subjects for 79 English concrete nouns, with variables linked to subject or word.
 
 ## c) Inspect 'lexdec'. Look at the head, tail, 
 ##    and summary. 
@@ -107,9 +108,11 @@ plot(density(S$RT))
 # 18	15	18	19	23	17	18	24	17	14	16	16	17	21	22	18	20	21	20	20	
 # 16	17	17	18	20	26
 
+count_data <- c(18, 15,	18,	19,	23,	17,	18,	24,	17,	14,	16,	16,	17,	21,	22,	18,	20,	21,	20,	20,	16,	17,	17,	18,	20,	26)
 
 ## a) What measurement scale is this data? Is it discrete or continuous? Explain
 ##    in one sentence why.
+##    This is discrete data as the count takes specific, separate, and countable values
 
 ## b) The researcher is also interested in whether story telling is related to 
 ##    their reading habits. As a proxy, she asked the children, whether they have 
@@ -117,30 +120,54 @@ plot(density(S$RT))
 ##    from children with library card (Y) and the remaining 13 from children 
 ##    without (N). What measurements scale does this variable have?
 lib = c(rep("Y",13),rep("N",13))
+## This is ordinal scale as it has two distinct values only which cannot be ordered
 
 ## c) You will now create a dataframe of this data. Start by creating a vector 
 ##    with participant IDs. Your vector should be named 'kid', and your 
 ##    participants should be labeled from 1 to 26
+kid <- c(1:26)
 
 ## d) Next, create a vector containing all the observations. Name this vector 'obs'.
+obs <- count_data
 
 ## e) Create a dataframe including kid, obs and lib. Assign this to 'stories'. 
+stories <- data.frame(kid, obs, lib)
 
 ## f) Take a look at the summary of your dataframe, and at the classes of your 
 ##    columns. What class are the variable 'kid' and 'lib'?
+class(kid)
+class(lib)
+## kid is integer class and lib is character
 
 ## g) Change the class of 'kid' and 'lib' to factor. Why is factor a better
 ##     class for these variables? (answer for both separately)
+?factor
+as.factor(kid)
+as.factor(lib)
+kid
+lib
+## kid is discrete observation IDs. R performs mathematical calculations like mean(kid) or sum(kid), which are statistically meaningless for unique identifiers.
+## lib is a binary categorical status ("Y" vs. "N"). Factor explicitly defines fixed levels (Levels: N Y), preventing non-standard values or entries.
 
 ## h) Create a boxplot of obs for the two lib groups
-
+?boxplot
+boxplot(obs ~ lib, 
+       xlab = "Library Access (lib)", 
+       ylab = "Observations (obs)", 
+       main = "Boxplot of obs by lib Group",
+       col = c("red", "green"))
 ## i) Are there outliers in one of the lib groups?
+## Yes there are outliers in both the lib groups which are shown by dots in the plot.
 
 ## j) Which group shows the larger interquartile range? 
+## Group N shows the largest interquartile range shown by the width of the box
 
 ## k) Which one has the  greater overall range?
+## Group N has the greater overall range given by: Range = Maximum - Minimum which is 10
 
 ## l) What is a whisker? Why is the upper whisker of group "Y" so short?
+## A whisker is a line extending from the top or bottom of the central box to to the length of 1.5 * Inter_Quartile_Range which indicate the variability outside the upper and lower quartiles.
 
 ## m) Compare the median of group Y with the mean - which one is plotted in your
 ##    boxplot? Why are they different?
+## Median is plotted in our boxplot at 17. Mean of the data points and is swayed by the outliers while median is not affected by outliers thus is robust.
