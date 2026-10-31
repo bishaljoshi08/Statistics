@@ -124,7 +124,7 @@ count_data <- c(18, 15,	18,	19,	23,	17,	18,	24,	17,	14,	16,	16,	17,	21,	22,	18,	
 ##    from children with library card (Y) and the remaining 13 from children 
 ##    without (N). What measurements scale does this variable have?
 lib = c(rep("Y",13),rep("N",13))
-## This is ordinal scale as it has two distinct values only which cannot be ordered
+## This is nominal scale as it has two distinct values only, which cannot be ordered
 
 ## c) You will now create a dataframe of this data. Start by creating a vector 
 ##    with participant IDs. Your vector should be named 'kid', and your 
