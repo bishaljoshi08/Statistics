@@ -170,7 +170,7 @@ boxplot(obs ~ lib,
 ## Both Group Y and N has equal overall range given by: Range = Maximum - Minimum which is 10 in both case
 
 ## l) What is a whisker? Why is the upper whisker of group "Y" so short?
-## A whisker is a line extending from the top or bottom of the central box to to the length of 1.5 * Inter_Quartile_Range which indicate the variability outside the upper and lower quartiles.
+## A whisker is a line extending from the top or bottom of the central box to to the length of 1.5 * Inter_Quartile_Range which indicate data spread. The largest data point of Y within 1.5 * IQR is at 19 so it is short. 
 
 ## m) Compare the median of group Y with the mean - which one is plotted in your
 ##    boxplot? Why are they different?
