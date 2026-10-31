@@ -147,7 +147,7 @@ class(lib)
 ##     class for these variables? (answer for both separately)
 ?factor
 as.factor(kid)
-as.factor(lib, labels= )
+as.factor(lib)
 kid
 lib
 ## kid is discrete observation IDs. R performs mathematical calculations like mean(kid) or sum(kid), which are statistically meaningless for unique identifiers.
@@ -174,4 +174,6 @@ boxplot(obs ~ lib,
 
 ## m) Compare the median of group Y with the mean - which one is plotted in your
 ##    boxplot? Why are they different?
-## Median is plotted in our boxplot at 17. Mean of the data points and is swayed by the outliers while median is not affected by outliers thus is robust.
+mean(stories$obs[stories$lib=="Y"])
+median(stories$obs[stories$lib=="Y"])
+## Median is plotted in our boxplot at 17 and mean is 17.84615. Mean of the data points and is dragged by the outliers while median is not affected by outliers thus is robust.
