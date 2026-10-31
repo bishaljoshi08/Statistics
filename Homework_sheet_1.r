@@ -17,6 +17,10 @@
 ## If you have any questions, you can ask these during the tutorial, or use the 
 ## cms discussion board for the course.
 
+## Please write below the names of all students from your assignment group present:
+## Name: Ankit Khatiwada
+## Name: Bishal Joshi
+## Name: Sonika Acharya
 
 ###############
 ### Exercise 3: Normal distribution generation
