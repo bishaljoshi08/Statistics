@@ -119,27 +119,55 @@ print(cileft90)
 ## and what their preferred and most consumed drink is.
 
 ## a. Load the libraries stringr, dplyr, tidyr and forcats
-
+library(stringr)
+library(dplyr)
+library(tidyr)
+library(forcats)
 
 ## b. read in the data
-
+getwd()
+data <- read.csv('./dataset/Insomnia26.csv')
+data
 
 ## c. get a summary of the dataset
+summary(data)
 
 
 ## d. the variable sleepProblem should be a numerical variable and have 0 for no Problem 
 ##    and 1 for sleep problems.
 ##    Make sure that this is the case
-
+data <- data %>%
+  mutate(
+    sleepProblem = str_trim(as.character(sleepProblem)),
+    sleepProblem = case_when(
+      sleepProblem %in% c("1", "11", "yes", "Yes") ~ 1,
+      sleepProblem %in% c("0", "no", "No") ~ 0
+    )
+  )
+data
+summary(data)
 
 ## e. how many students encounter sleep problems?
-
+sum(data$sleepProblem)
+# 24 students encounter sleep problems
 
 ## f. how many different drinks do students name? (transform the variable into a 
 ## factor first)
-
+data <- data %>%
+  mutate(
+    drink = factor(drink)
+  )
+data$drink
+# The students name three different drinks but for the same drink coffee and tea we have different spellings making it a factor of level 7
 
 ## g. collapse factor levels which were spelled wrong
-
+data$drink <- fct_collapse(
+  data$drink,
+  coffee = c('cofee', 'coffe', 'coffee', 'Koffee'),
+  tea = c('tee', 'tea')
+)
+data
 
 ## h. Assign your cleaned dataset to clean
+clean <- data
+clean
