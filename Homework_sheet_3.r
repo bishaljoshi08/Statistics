@@ -13,8 +13,12 @@
 ## Only 1 member needs to submit! 
 
 ## Please write below your name and matriculation number (any member of the team)
-## Name:
-## Matriculation number:
+## Name: Ankit Khatiwada
+## Matriculation number: 7089529
+## Name: Bishal Joshi
+## Matriculation number: 7079449
+## Name: Sonika Acharya
+## Matriculation number: 7090131
 
 ####################################################################
 ### Exercise 2: Chi-squared test in r
@@ -59,7 +63,7 @@ chitest$expected
 ## relationship between drink and sleeping problems.
 
 ## a.  What is a confound? Why can it be problematic? Describe in your own words
-## Confound is a variable which can be related to both the dependent or independent variable
+## Confound is a variable which can be related to both the dependent and independent variable
 ## and can affect the outcome of our test
 
 ## b. Please argue whether gender is a confound here. 
@@ -150,7 +154,13 @@ pbinom(q= 5 , size = 20, prob = 1/3)
 ##  are asked to switch to tea and then again asked for sleeping problems.
 
 ## a) Can you use the ChiSquare test in this situation? Explain and motivate
-##  your answer
+##  No. For ChiSquare test each observation should be independent but here 
+## a student can be measured twice
 
 
 ## b) Is there an alternative test you could use? Why would this be appropriate?
+## Yes, we can use McNemar's test in this caseIt. For this we need 2*2 matrix of student's pair.
+## It includes students that answered the same way that is they had sleep problem or not with both tea and coffee,
+## and other case.
+## In this case we are interested in the other case and we assume the two cells value are same as null hypothesis.
+##This test accounts for pair so it is appropriate
